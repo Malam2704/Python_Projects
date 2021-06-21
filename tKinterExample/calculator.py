@@ -111,17 +111,17 @@ button_6 = Button(root, text="6", padx=40, pady=20, command=lambda: button_click
 button_7 = Button(root, text="7", padx=40, pady=20, command=lambda: button_click(7))
 button_8 = Button(root, text="8", padx=40, pady=20, command=lambda: button_click(8))
 button_9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
-button_0 = Button(root, text="0", padx=88, pady=20, command=lambda: button_click(0))
+button_0 = Button(root, text="0", padx=92, pady=20, command=lambda: button_click(0))
 
 button_dot = Button(root, text=".", padx=41, pady=20, command=lambda: button_click("."))
 
-button_clear = Button(root, text="C", padx=88, pady=20, command=button_clear)
+button_clear = Button(root, text="C", padx=92, pady=20, command=button_clear)
 
 button_power = Button(root, text="^", padx=40, pady=20, command=button_power)
 button_adder = Button(root, text="+", padx=40, pady=20, command=button_adder)
-button_subtracter = Button(root, text="-", padx=40, pady=20, command=button_subtracter)
-button_multiplier = Button(root, text="x", padx=40, pady=20, command=button_multiplier)
-button_divider = Button(root, text="/", padx=40, pady=20, command=button_divider)
+button_subtracter = Button(root, text="-", padx=41, pady=20, command=button_subtracter)
+button_multiplier = Button(root, text="x", padx=41, pady=20, command=button_multiplier)
+button_divider = Button(root, text="/", padx=41, pady=20, command=button_divider)
 
 button_equal = Button(root, text="=", padx=40, pady=20, command=button_equal)
 
