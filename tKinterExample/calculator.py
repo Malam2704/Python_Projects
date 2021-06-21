@@ -59,45 +59,26 @@ def button_equal():
 
     if(math_state == "addition"):
         mySum = f_num + float(second_number)
-        e.insert(0, mySum)
+        if mySum == int(mySum):
+            e.insert(0, int(mySum))
+        else:
+            e.insert(0, mySum)
     elif(math_state == "subtraction"):
         myDiff = f_num - float(second_number)
-        e.insert(0, myDiff)
+        if myDiff == int(myDiff):
+            e.insert(0, int(myDiff))
+        else:
+            e.insert(0, myDiff)
     elif(math_state == "multiplication"):
         myProd = f_num * float(second_number)
-        e.insert(0, myProd)
+        if myProd == int(myProd):
+            e.insert(0, int(myProd))
+        else:
+            e.insert(0, myProd)
     elif(math_state == "division"):
         myQuot = f_num / float(second_number)
-        e.insert(0, myQuot)
-
-# def button_equal():
-#     second_number = e.get()
-#     e.delete(0, END)
-
-#     if(math_state == "addition"):
-#         mySum = f_num + float(second_number)
-#         if(mySum.is_integer):
-#             e.insert(0, int(mySum))
-#         else:
-#             e.insert(0, mySum)
-#     elif(math_state == "subtraction"):
-#         myDiff = f_num - float(second_number)
-#         if(myDiff.is_integer):
-#             e.insert(0, int(myDiff))
-#         else:
-#             e.insert(0, myDiff)
-#     elif(math_state == "multiplication"):
-#         myProd = f_num * float(second_number)
-#         if(myProd.is_integer):
-#             e.insert(0, int(myProd))
-#         else:
-#             e.insert(0, myProd)
-#     elif(math_state == "division"):
-#         myQuot = f_num / float(second_number)
-#         if(myQuot.is_integer):
-#             e.insert(0, int(myQuot))
-#         else:
-#             e.insert(0, myQuot)
+        if myQuot == int(myQuot):
+            e.insert(0, myQuot)
 
 
 #Define the buttons
