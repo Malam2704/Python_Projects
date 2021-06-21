@@ -58,13 +58,46 @@ def button_equal():
     e.delete(0, END)
 
     if(math_state == "addition"):
-        e.insert(0, f_num + float(second_number))
+        mySum = f_num + float(second_number)
+        e.insert(0, mySum)
     elif(math_state == "subtraction"):
-        e.insert(0, f_num - float(second_number))
+        myDiff = f_num - float(second_number)
+        e.insert(0, myDiff)
     elif(math_state == "multiplication"):
-        e.insert(0, f_num * float(second_number))
+        myProd = f_num * float(second_number)
+        e.insert(0, myProd)
     elif(math_state == "division"):
-        e.insert(0, f_num / float(second_number))
+        myQuot = f_num / float(second_number)
+        e.insert(0, myQuot)
+
+# def button_equal():
+#     second_number = e.get()
+#     e.delete(0, END)
+
+#     if(math_state == "addition"):
+#         mySum = f_num + float(second_number)
+#         if(mySum.is_integer):
+#             e.insert(0, int(mySum))
+#         else:
+#             e.insert(0, mySum)
+#     elif(math_state == "subtraction"):
+#         myDiff = f_num - float(second_number)
+#         if(myDiff.is_integer):
+#             e.insert(0, int(myDiff))
+#         else:
+#             e.insert(0, myDiff)
+#     elif(math_state == "multiplication"):
+#         myProd = f_num * float(second_number)
+#         if(myProd.is_integer):
+#             e.insert(0, int(myProd))
+#         else:
+#             e.insert(0, myProd)
+#     elif(math_state == "division"):
+#         myQuot = f_num / float(second_number)
+#         if(myQuot.is_integer):
+#             e.insert(0, int(myQuot))
+#         else:
+#             e.insert(0, myQuot)
 
 
 #Define the buttons
@@ -82,39 +115,39 @@ button_0 = Button(root, text="0", padx=88, pady=20, command=lambda: button_click
 
 button_dot = Button(root, text=".", padx=41, pady=20, command=lambda: button_click("."))
 
-button_clear = Button(root, text="Clear", padx=78, pady=20, command=button_clear)
+button_clear = Button(root, text="C", padx=40, pady=20, command=button_clear)
 
-button_adder = Button(root, text="+", padx=39, pady=20, command=button_adder)
-button_subtracter = Button(root, text="-", padx=41, pady=20, command=button_subtracter)
-button_multiplier = Button(root, text="*", padx=40, pady=20, command=button_multiplier)
+button_adder = Button(root, text="+", padx=40, pady=20, command=button_adder)
+button_subtracter = Button(root, text="-", padx=40, pady=20, command=button_subtracter)
+button_multiplier = Button(root, text="x", padx=40, pady=20, command=button_multiplier)
 button_divider = Button(root, text="/", padx=40, pady=20, command=button_divider)
 
-button_equal = Button(root, text="=", padx=88, pady=20, command=button_equal)
+button_equal = Button(root, text="=", padx=40, pady=20, command=button_equal)
 
 
 #putting the buttons on the screen
-button_1.grid(row=3, column=0)
-button_2.grid(row=3, column=1)
-button_3.grid(row=3, column=2)
+button_1.grid(row=4, column=0)
+button_2.grid(row=4, column=1)
+button_3.grid(row=4, column=2)
 
-button_4.grid(row=2, column=0)
-button_5.grid(row=2, column=1)
-button_6.grid(row=2, column=2)
+button_4.grid(row=3, column=0)
+button_5.grid(row=3, column=1)
+button_6.grid(row=3, column=2)
 
-button_7.grid(row=1, column=0)
-button_8.grid(row=1, column=1)
-button_9.grid(row=1, column=2)
+button_7.grid(row=2, column=0)
+button_8.grid(row=2, column=1)
+button_9.grid(row=2, column=2)
 
-button_0.grid(row=4, column=0, columnspan=2)
-button_dot.grid(row=4, column=2)
+button_0.grid(row=5, column=0, columnspan=2)
+button_dot.grid(row=5, column=2)
 
-button_clear.grid(row=5, column=0, columnspan=2)
+button_clear.grid(row=1, column=2)
 
 button_adder.grid(row=1, column=3)
 button_subtracter.grid(row=2, column=3)
 button_multiplier.grid(row=3, column=3)
 button_divider.grid(row=4, column=3)
 
-button_equal.grid(row=5, column=2, columnspan=3)
+button_equal.grid(row=5, column=3)
 
 root.mainloop()
