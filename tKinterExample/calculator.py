@@ -1,7 +1,9 @@
 from tkinter import *
 
 root = Tk()
-root.title("Simple Calculator")
+root.title("Mohammed's Calculator")
+# Be open in git repository for relative file path
+root.iconbitmap('tKinterExample/images/calculator.ico')
 
 e = Entry(root, width=50, borderwidth=5)
 e.grid(row=0,column=0,columnspan=4, padx=10, pady=10)
@@ -53,6 +55,15 @@ def button_divider():
     f_num = float(first_number)
     e.delete(0,END)
 
+def button_power():
+    #gets number in the Label and stores it into a global var
+    first_number = e.get()
+    global f_num
+    global math_state
+    math_state = 'power'
+    f_num = float(first_number)
+    e.delete(0,END)
+
 def button_equal():
     second_number = e.get()
     e.delete(0, END)
@@ -78,7 +89,15 @@ def button_equal():
     elif(math_state == "division"):
         myQuot = f_num / float(second_number)
         if myQuot == int(myQuot):
+            e.insert(0, int(myQuot))
+        else:
             e.insert(0, myQuot)
+    elif(math_state == "power"):
+        myPow = f_num ** float(second_number)
+        if myPow == int(myPow):
+            e.insert(0, int(myPow))
+        else:
+            e.insert(0, myPow)
 
 
 #Define the buttons
@@ -96,8 +115,9 @@ button_0 = Button(root, text="0", padx=88, pady=20, command=lambda: button_click
 
 button_dot = Button(root, text=".", padx=41, pady=20, command=lambda: button_click("."))
 
-button_clear = Button(root, text="C", padx=40, pady=20, command=button_clear)
+button_clear = Button(root, text="C", padx=88, pady=20, command=button_clear)
 
+button_power = Button(root, text="^", padx=40, pady=20, command=button_power)
 button_adder = Button(root, text="+", padx=40, pady=20, command=button_adder)
 button_subtracter = Button(root, text="-", padx=40, pady=20, command=button_subtracter)
 button_multiplier = Button(root, text="x", padx=40, pady=20, command=button_multiplier)
@@ -122,13 +142,13 @@ button_9.grid(row=2, column=2)
 button_0.grid(row=5, column=0, columnspan=2)
 button_dot.grid(row=5, column=2)
 
-button_clear.grid(row=1, column=2)
+button_clear.grid(row=1, column=0, columnspan=2)
 
+button_power.grid(row=1, column=2)
 button_adder.grid(row=1, column=3)
 button_subtracter.grid(row=2, column=3)
 button_multiplier.grid(row=3, column=3)
 button_divider.grid(row=4, column=3)
-
 button_equal.grid(row=5, column=3)
 
 root.mainloop()
