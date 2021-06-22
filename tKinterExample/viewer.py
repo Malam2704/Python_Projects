@@ -26,7 +26,7 @@ def forward(image_number):
     my_label.grid_forget()
     my_label = Label(image=image_list[image_number-1])
     button_forward = Button(root, text=">>", command=lambda: forward(image_number+1))
-    button_back = Button(root, text="<<", command=lambda: forward(image_number-1))
+    button_back = Button(root, text="<<", command=lambda: back(image_number-1))
 
     if(image_number == 5):
         button_forward = Button(root, text=">>", state=DISABLED)
@@ -44,7 +44,7 @@ def back(image_number):
     my_label.grid_forget()
     my_label = Label(image=image_list[image_number-1])
     button_forward = Button(root, text=">>", command=lambda: forward(image_number+1))
-    button_back = Button(root, text="<<", command=lambda: forward(image_number-1))
+    button_back = Button(root, text="<<", command=lambda: back(image_number-1))
 
     if(image_number == 1):
         button_back = Button(root, text="<<", state=DISABLED)
