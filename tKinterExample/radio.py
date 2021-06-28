@@ -9,7 +9,7 @@ root.iconbitmap('tKinterExample/images/flamesword.ico')
 r = IntVar()
 r.set("2")
 
-MODES = [
+TOPPINGS = [
     ("Pepperoni", "Pepperoni"),
     ("Cheese", "Cheese"),
     ("Mushroom", "Mushroom"),
@@ -19,8 +19,8 @@ MODES = [
 pizza = StringVar()
 pizza.set("Pepperoni")
 
-for text, mode in MODES:
-    Radiobutton(root, text=text, variable=pizza, value=mode).pack()
+for text, topping in TOPPINGS:
+    Radiobutton(root, text=text, variable=pizza, value=topping).pack(anchor=W)
 
 
 def clicked(value):
@@ -30,8 +30,8 @@ def clicked(value):
 # Radiobutton(root, text="Option 1", variable=r, value=1, command=lambda: clicked(r.get())).pack()
 # Radiobutton(root, text="Option 2", variable=r, value=2, command=lambda: clicked(r.get())).pack()
 
-myLabel = Label(root, text=r.get())
-myLabel.pack()
+# myLabel = Label(root, text=r.get())
+# myLabel.pack()
 
 myButton = Button(root, text="Click Me", command=lambda: clicked(pizza.get()))
 myButton.pack()
