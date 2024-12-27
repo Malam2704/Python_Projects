@@ -1,10 +1,19 @@
 import json
 
+def print_json_data():
+    with open('data.json', 'r') as f:
+        data = json.load(f)
+        for date in data:
+            print(date)
+
 def add_task():
-    with open('data.json', 'w') as file:
+    print("Current Dates")
+    print_json_data()
+
+    with open('data.json', 'a') as file:
         while(True):
-            print(file)
-            choice = input("Choose a date or add a new one: ")
+            
+            choice = input("Choose a date or type 'new' for new task: ")
             
             if(choice == "exit"):
                 break
