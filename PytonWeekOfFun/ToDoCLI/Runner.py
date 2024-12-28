@@ -11,8 +11,7 @@ def add_task():
         writer = csv.writer(file)
         
         while(True):
-            print("Current Dates & Tasks, (Recently added not shown until exit)")
-            print_csv_data()
+            print("Exit to see Recently added items")
             user_date = input("Enter the date for your task: ")
             user_tasks = input("Enter your tasks you will complete: ")
 
