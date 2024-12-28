@@ -1,32 +1,31 @@
-import json
+import csv
 
-def print_json_data():
-    with open('data.json', 'r') as f:
-        data = json.load(f)
-        for date in data:
-            print(date)
+def print_csv_data():
+    with open('data.csv', 'r') as file:
+        csvFile = csv.reader(file)
+        for lines in csvFile:
+            print(lines[0],lines[1])
 
 def add_task():
-    print("Current Dates")
-    print_json_data()
-
-    with open('data.json', 'a') as file:
+    with open('data.csv', 'w', newline="") as file:
+        writer = csv.writer(file)
+        field = ["name","age","country"]
         while(True):
             
-            choice = input("Choose a date or type 'new' for new task: ")
+            choice = input("Here are your tasks, type 'new' for new task, or exit to leave: ")
             
             if(choice == "exit"):
                 break
             elif(choice == "new"):
-                user_dict = dict()
-                user_date = input("Enter your date: ")
-                user_data = input("Enter List of Tasks you need to do: ")
-                user_dict[user_date] = user_data
-                json.dump(user_dict, file)
+                user_date = input("Enter the date for your task: ")
+                user_tasks = input("Enter your tasks you will complete: ")
+                writer.writerow([user_date,user_tasks])
 
 
 def main():
     while(True):
+        print("Current Dates")
+        print_csv_data()
         user_answer = input("What would you like to do?\n add - User can add a new item to their list\n exit - Leaves the application\n")
 
         if(user_answer == "exit"):
