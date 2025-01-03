@@ -14,7 +14,8 @@ def print_characters(characters):
 
 def main():
     characters = set()
-    playing = input("Welcome to Treasure Quest!\n Type 'Play' to Enter\n")
+    shop_items = {"Basic Sword": 5, "Bronze Sword": 15, "Silver Sword": 50, "Gold Sword": 100}
+    playing = input("\n*********** Welcome to Treasure Quest! ***********\n\t Type 'Play' to Enter\n")
     chosen_character = None
     
     while(chosen_character == None):
@@ -37,9 +38,17 @@ def main():
                 chosen_character = input("Choose a character: ")
                 for character in characters:
                     if(chosen_character.lower() == (character.name).lower()):
-                        print("Let us Continue " + character.name)
+                        print("Let us Continue " + character.name + "\n")
     
     while(True):
+        player_action = input("****** Player Home *****\n -- Shop\n -- Fight -- Exit Game (Type 'exit'\n")
 
+        if(player_action.lower() == 'shop'):
+            print("\n ***** Shop Items *****")
+            for item in shop_items:
+                print(f"{item}, Attack Power: {shop_items[item]}")
+            print("\n")
+        if(player_action.lower() == 'exit'):
+            break
 
 main()
