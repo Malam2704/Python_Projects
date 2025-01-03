@@ -20,6 +20,12 @@ class Item():
         self.attack_power = attack_power 
         self.price = price
 
+class Armor():
+    def __init__(self, name, health_boost, price):
+        self.name = name
+        self.health_boost = health_boost
+        self.price = price
+
 class Monster():
      def __init__(self, name, health, attack, gold_reward):
         self.name = name
