@@ -1,3 +1,6 @@
+import time
+
+
 class Player():
     def __init__(self, name, health=100, attack = 5, gold = 5):
         self.name = name
@@ -7,6 +10,9 @@ class Player():
         self.current_item = "Basic Sword"
         self.current_armor = "Basic Armor"
         self.inventory = []
+
+    def __str__(self):
+        return f"{self.name}\n---------------\n  Attack: {self.attack}\n  Health: {self.health}\n  Gold: {self.gold}\n  Current Item: {self.current_item}\n  Current Armor: {self.current_armor}\n  Inventory: {self.inventory}"
 
 class Item():
     def __init__(self, name, attack_power, price):
@@ -32,8 +38,10 @@ def battle_function(player1, player2):
 
     print(" *** Battle Time! ***")
     while (player1.health > 0 and player2.health > 0):
+        time.sleep(1000)
         player2.health -= player1.attack
         print(f"   {player1.name} (Health: {player1.health}) attacks {player2.name} (Health: {player2.health})")
+        time.sleep(1000)
         player1.health -= player2.attack
         print(f"   {player2.name} (Health: {player2.health}) attacks {player1.name} (Health: {player1.health})")
     
@@ -87,10 +95,10 @@ def main():
                     print("!!!!! Character not found !!!!!")
     
     while(playing.lower() == "play"):
-        player_action = input("****** Player Home *****\n -- Shop\n -- Fight\n -- Inventory\n -- Exit Game (Type 'exit')\n:")
+        player_action = input("\n****** Player Home *****\n -- Shop\n -- Fight\n -- Inventory\n -- Player Stats\n -- Exit Game (Type 'exit')\n:")
 
         if(player_action.lower() == 'shop'):
-            print("\n  ***** Shop Items *****")
+            print("\n***** Shop Items *****")
             for item in shop_items:
                 print(f"\t{item}, Attack Power: {shop_items[item].attack_power}, Price: {shop_items[item].price}")
             player_shop_action = input("  What will you do?\n    Buy\n    Exit\n:" )
@@ -109,7 +117,7 @@ def main():
                 else:
                     print("Item does not exist")
         elif(player_action.lower() == 'fight'):
-            print("\n  ***** Arena Monsters *****")
+            print("\n***** Arena Monsters *****")
             for monster in monsters:
                 print(f"\t{monster}, Health: {monsters[monster].health}, Attack Power: {monsters[monster].attack}")
             player_fight_action = input("  What will you do?\n    Fight\n    Exit\n:" )
@@ -122,13 +130,16 @@ def main():
                     battle_function(chosen_character, monsters[fighting_choice])
                 else:
                     print("Monster does not exist")
-
         elif(player_action.lower() == 'inventory'):
             print("\n  ***** Inventory Items *****")
             for item in chosen_character.inventory:
                 print(f"{item.name}")
-            print("\n")
-        if(player_action.lower() == 'exit'):
+        elif(player_action.lower() == 'player stats'):
+            print("\n  ***** Player Stats *****")
+            print(chosen_character)
+        if(player_action.lower() == 'exit' or player_action.lower() == 'exit game'):
             break
+
+        leave = input("Type anything to leave")
 
 main()
