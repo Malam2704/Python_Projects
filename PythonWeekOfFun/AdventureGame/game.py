@@ -44,10 +44,10 @@ def battle_function(player1, player2):
 
     print(" *** Battle Time! ***")
     while (player1.health > 0 and player2.health > 0):
-        time.sleep(1000)
+        time.sleep(1)
         player2.health -= player1.attack
         print(f"   {player1.name} (Health: {player1.health}) attacks {player2.name} (Health: {player2.health})")
-        time.sleep(1000)
+        time.sleep(1)
         player1.health -= player2.attack
         print(f"   {player2.name} (Health: {player2.health}) attacks {player1.name} (Health: {player1.health})")
     
