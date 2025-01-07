@@ -109,7 +109,7 @@ def main():
                     print("!!!!! Character not found !!!!!")
     
     while(playing.lower() == "play"):
-        player_action = input("\n****** Player Home *****\n -- Shop\n -- Fight\n -- Inventory\n -- Player Stats\n -- Exit Game (Type 'exit')\n:")
+        player_action = input("\n****** Player Home *****\n -- Shop\n -- Fight\n -- Inventory\n -- Player Stats\n -- Exit Game (Type 'exit')\n -- Exit and Save (Type 'save')\n:")
 
         if(player_action.lower() == 'shop'):
             print("\n***** Shop Items *****")
