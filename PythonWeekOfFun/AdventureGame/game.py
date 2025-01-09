@@ -1,5 +1,6 @@
 import time
-
+import json
+import os
 
 class Player():
     def __init__(self, name, health=100, attack = 5, gold = 5):
@@ -7,6 +8,7 @@ class Player():
         self.health = health
         self.attack = attack
         self.gold = gold
+        self.experience = 0
         self.current_item = "Basic Sword"
         self.current_armor = "Basic Armor"
         self.inventory = []
@@ -154,8 +156,12 @@ def main():
         elif(player_action.lower() == 'player stats'):
             print("\n  ***** Player Stats *****")
             print(chosen_character)
-        if(player_action.lower() == 'exit' or player_action.lower() == 'exit game'):
+        elif(player_action.lower() == 'exit' or player_action.lower() == 'exit game'):
             break
+        elif(player_action.lower() == 'save' or player_action.lower() == 'save game'):
+            if os.path.isfile('./players.json') and os.access('./players.json', os.R_OK):
+                # checks if file exists
+                print ("File exists and is readable")
 
         leave = input("Type anything to leave")
 

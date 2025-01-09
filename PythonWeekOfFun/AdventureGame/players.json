@@ -1,0 +1,23 @@
+{
+    "Johann": {
+        "name": "Johann",
+        "health": 100,
+        "attack": 5,
+        "gold": 5,
+        "experience": 1000,
+        "current_item": "Silver Sword",
+        "current_armor":"Bronze Armor",
+        "inventory": [{
+            "item_type": "Weapon",
+            "item_name": "Basic Sword",
+            "item_power": 5,
+            "item_price": 5
+        },{
+            "item_type": "Armor",
+            "item_name": "Basic Armor",
+            "item_power": 5,
+            "item_price": 5
+        }]
+    }
+
+}
