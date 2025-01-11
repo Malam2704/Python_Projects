@@ -64,10 +64,17 @@ def battle_function(player1, player2):
     player1.health = original_player1_health
     player2.health = original_player2_health
 
+def load_players_json():
+    # Open and read the JSON file
+    with open('players.json', 'r') as file:
+        data = json.load(file)
+        print(data)
+
 def main():
     playing = input("\n*********** Welcome to Treasure Quest! ***********\n\t Type 'Play' to Enter\n:")
 
     characters = {}
+    load_players_json()
     shop_items = {"Basic Sword": Item("Basic Sword", 5, 5), 
                   "Bronze Sword": Item("Bronze Sword", 15, 15), 
                   "Silver Sword": Item("Silver Sword", 50, 50), 
