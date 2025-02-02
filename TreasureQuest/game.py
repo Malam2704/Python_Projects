@@ -2,20 +2,6 @@ import time
 import json
 import os
 
-class Player():
-    def __init__(self, name, health=100, attack = 5, gold = 5):
-        self.name = name
-        self.health = health
-        self.attack = attack
-        self.gold = gold
-        self.experience = 0
-        self.current_item = "Basic Sword"
-        self.current_armor = "Basic Armor"
-        self.inventory = []
-
-    def __str__(self):
-        return f"{self.name}\n---------------\n  Attack: {self.attack}\n  Health: {self.health}\n  Gold: {self.gold}\n  Current Item: {self.current_item}\n  Current Armor: {self.current_armor}\n  Inventory: {self.inventory}"
-
 class Item():
     def __init__(self, name, attack_power, price):
         self.name = name
@@ -34,6 +20,23 @@ class Monster():
         self.health = health
         self.attack = attack
         self.gold_reward = gold_reward
+
+class Player():
+    def __init__(self, name, health=100, attack = 5, gold = 5, experience = 0):
+        self.name = name
+        self.health = health
+        self.attack = attack
+        self.gold = gold
+        self.experience = experience
+        self.current_item = "Basic Sword"
+        self.current_armor = "Basic Armor"
+        self.inventory = []
+
+    def __str__(self):
+        return f"{self.name}\n---------------\n  Attack: {self.attack}\n  Health: {self.health}\n  Gold: {self.gold}\n  Current Item: {self.current_item}\n  Current Armor: {self.current_armor}\n  Inventory: {self.inventory}"
+
+    def add_inventory(new_item: Item):
+        self.inventory.append(new_item)
 
 def print_characters(characters):
     print("---------- Current Characters ----------")
