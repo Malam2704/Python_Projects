@@ -16,3 +16,5 @@ def maxminarray(arr):
     return min,max
 
 print(maxminarray([1,2,3,4,5,6,7,8,9]))
+
+# Can also use min(arr) and max(arr) functions
