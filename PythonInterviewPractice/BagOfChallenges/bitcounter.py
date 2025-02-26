@@ -25,7 +25,6 @@ def binary_counter(number):
 
         binary_number += return_binary(start_exponent)
         number -= 2**start_exponent
-        print(number, start_exponent)
         start_exponent = 0
 
     return binary_number
