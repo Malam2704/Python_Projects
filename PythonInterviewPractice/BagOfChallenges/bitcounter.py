@@ -1,12 +1,30 @@
-def bit_counter(num):
-    total = 1
-    counter = 0
-    while num <= 2^counter :
-        print(counter, total)
-        total *= 2
-        counter += 1
+# def bit_counter(num):
+    
 
-bit_counter(5)
+# bit_counter(5)
 
+# Make a bit counter, so a number like 5 in decimal will be 101 in binary
+# So if I have a number like 72, I'm thinking which exponene tof 2 is 
+"""
+added up to 72 or closest which is 64, or 2 ^ 6. Which mean 1000000.
+Giving us 8 left, which can be subtracted by 2 ^ 3 or 1000
+"""
+def return_binary(exponent):
+    bini = "1"
+    for i in range(1, exponent):
+        bini += "0"
 
+    return bini
+
+def binary_counter(number):
+    binary_number = 0
+    start_exponent = 0
+    while(2**start_exponent < number):
+        start_exponent += 1
+
+    return start_exponent
+
+print(binary_counter(72))
+print(return_binary(7))
+        
     
