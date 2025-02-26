@@ -11,20 +11,26 @@ Giving us 8 left, which can be subtracted by 2 ^ 3 or 1000
 """
 def return_binary(exponent):
     bini = "1"
-    for i in range(1, exponent):
+    for i in range(0, exponent):
         bini += "0"
 
-    return bini
+    return int(bini)
 
 def binary_counter(number):
     binary_number = 0
     start_exponent = 0
-    while(2**start_exponent < number):
-        start_exponent += 1
+    while(number > 0):
+        while(2**(start_exponent+1) <= number):
+            start_exponent += 1
 
-    return start_exponent
+        binary_number += return_binary(start_exponent)
+        number -= 2**start_exponent
+        print(number, start_exponent)
+        start_exponent = 0
+
+    return binary_number
+
 
 print(binary_counter(72))
-print(return_binary(7))
         
     
