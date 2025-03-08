@@ -2,11 +2,15 @@ class storage_system():
     def __init__(self):
         self.my_items = {}
 
-    def add_item(self, Product, quantity_added=0):
-        if(self.my_items[Product.id]):
-            self.my_items[Product.id] = self.my_items[Product.id].change_quantity(quantity_added)
+    def add_item(self, Product):
+        if(Product.id in self.my_items):
+            # get self.my_items[Product.id]
+            curr_product = self.my_items[Product.id]
+            # add quantity of Product (Product.quantity) to that variable
+            curr_product.quantity += Product.quantity
+            # set self.my_items[Product.id] to that var
         else:
-            Product.change_quantity(quantity_added)
+            Product.change_quantity(Product.quantity)
             self.my_items[Product.id] = Product
 
     def display_items(self):
@@ -30,6 +34,9 @@ def main():
     new_product = Product(12345, "Tablets", 55)
     total_storage = storage_system()
     total_storage.add_item(new_product)
+    total_storage.display_items()
+    total_storage.add_item(new_product)
+    total_storage.display_items()
 
 if __name__ == "__main__":
     main()
