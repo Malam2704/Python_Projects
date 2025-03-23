@@ -6,7 +6,8 @@ import keyboard
 
 # Define the coordinates to click (x, y)
 coordinates = [
-    (1167, 479),  # First point
+    (1176, 522),
+    # (1167, 479),  # First point
     (1576, 843),  # Second point
     (1901, 905),  # Third point
     (1279, 684)   # Fourth point
@@ -14,7 +15,7 @@ coordinates = [
 
 # Time to wait before clicking the fourth point (in seconds)
 # 1 minute and 30 seconds = 90 seconds
-wait_time = 90
+wait_time = 50
 
 def main():
     # Safety feature: Move mouse to top-left corner to abort
