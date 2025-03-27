@@ -8,12 +8,12 @@ import pyautogui
 # ================================
 
 # Set the target time (24-hour format) when the game should launch.
-TARGET_HOUR = 14    # Example: 14 for 2 PM
-TARGET_MINUTE = 0   # Example: 0 minutes
-TARGET_SECOND = 0   # Example: 0 seconds
+TARGET_HOUR = 1    # Example: 14 for 2 PM
+TARGET_MINUTE = 59   # Example: 0 minutes
+TARGET_SECOND = 0  # Example: 0 seconds
 
 # Path to your game executable (update this with the actual path)
-GAME_EXECUTABLE = r"C:\Path\To\Your\Game.exe"
+GAME_EXECUTABLE = r"D:\Steam\steamapps\common\kings call\Game.exe"
 
 # List of (x, y) coordinates where the clicks will occur
 # Adjust these coordinates to the locations in your game where actions occur.
@@ -71,8 +71,8 @@ time.sleep(POST_CLICK_DELAY)
 # ================================
 print("Tasks complete. Exiting the game...")
 
-# Option 1: Simulate a hotkey (Alt+F4) to close the game
-pyautogui.hotkey('alt', 'f4')
+# # Option 1: Simulate a hotkey (Alt+F4) to close the game
+# pyautogui.hotkey('alt', 'f4')
 
 # Option 2: Alternatively, terminate the game process directly
 game_process.terminate()
