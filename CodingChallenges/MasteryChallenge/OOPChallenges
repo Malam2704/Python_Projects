@@ -1,0 +1,25 @@
+import Math
+
+class Rectangle():
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def return_area(self):
+        return self.width * self.height
+    
+    def return_perimeter(self):
+        return 2 * (self.width + self.height)
+    
+class Shape():
+    def area(self):
+        pass
+
+class Circle():
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius**2
+
+
