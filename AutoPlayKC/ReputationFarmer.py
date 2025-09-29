@@ -6,16 +6,10 @@ import keyboard
 
 # Define the coordinates to click (x, y)
 coordinates = [
-    (1176, 522),
-    # (1167, 479),  # First point
-    (1576, 843),  # Second point
-    (1901, 905),  # Third point
-    (1279, 684)   # Fourth point
+    (1133, 419),   # First point
+    (1725, 881),   # Second point
+    (1432, 785)    # Third point
 ]
-
-# Time to wait before clicking the fourth point (in seconds)
-# 1 minute and 30 seconds = 90 seconds
-wait_time = 50
 
 def main():
     # Safety feature: Move mouse to top-left corner to abort
@@ -29,30 +23,25 @@ def main():
     try:
         print("Starting the clicking sequence. Press 'E' to exit.")
         
-        # Keep running until 'E' is pressed
         while not keyboard.is_pressed('e'):
-            # Click the first 3 coordinates
-            for i in range(3):
-                print(f"Clicking point {i+1}: {coordinates[i]}")
-                pyautogui.click(coordinates[i][0], coordinates[i][1])
-                time.sleep(0.5)  # Small delay between consecutive clicks
+            # Click first coordinate
+            print(f"Clicking point 1: {coordinates[0]}")
+            pyautogui.click(coordinates[0][0], coordinates[0][1])
             
-            # Wait for the specified time
-            print(f"Waiting for {wait_time} seconds before clicking the fourth point...")
+            time.sleep(1)  # Wait 1 seconds
             
-            # Check for 'E' key during the wait period
-            start_time = time.time()
-            while time.time() - start_time < wait_time:
-                if keyboard.is_pressed('e'):
-                    print("E key pressed, exiting...")
-                    return
-                time.sleep(0.1)
+            # Click second coordinate
+            print(f"Clicking point 2: {coordinates[1]}")
+            pyautogui.click(coordinates[1][0], coordinates[1][1])
+
+            time.sleep(4)  # Wait 4 seconds
             
-            # Click the fourth point
-            print(f"Clicking point 4: {coordinates[3]}")
-            pyautogui.click(coordinates[3][0], coordinates[3][1])
-            time.sleep(0.5)
+            # Click third coordinate
+            print(f"Clicking point 3: {coordinates[2]}")
+            pyautogui.click(coordinates[2][0], coordinates[2][1])
             
+            time.sleep(4)  # Wait 4 seconds
+
             print("Sequence completed, starting again...")
             
     except KeyboardInterrupt:
