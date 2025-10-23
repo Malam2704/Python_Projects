@@ -34,13 +34,13 @@ def main():
             print(f"Clicking point 2: {coordinates[1]}")
             pyautogui.click(coordinates[1][0], coordinates[1][1])
 
-            time.sleep(4)  # Wait 4 seconds
+            time.sleep(7)  # Wait 7 seconds
             
             # Click third coordinate
             print(f"Clicking point 3: {coordinates[2]}")
             pyautogui.click(coordinates[2][0], coordinates[2][1])
             
-            time.sleep(4)  # Wait 4 seconds
+            time.sleep(1.5)  # Wait 4 seconds
 
             print("Sequence completed, starting again...")
             
