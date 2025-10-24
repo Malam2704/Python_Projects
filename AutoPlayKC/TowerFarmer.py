@@ -4,8 +4,8 @@ import keyboard
 
 # Define your two coordinates (x, y)
 coordinates = [
-    (1133, 419),  # First point
-    (1725, 881)   # Second point
+    (1982, 1023),  # First point
+    (2192, 996)   # Second point
 ]
 
 def main():
@@ -21,7 +21,7 @@ def main():
             print(f"Clicking first point: {coordinates[0]}")
             pyautogui.click(coordinates[0][0], coordinates[0][1])
 
-            time.sleep(4)  # Wait 4 seconds
+            time.sleep(2.25)  # Wait 2.25 seconds
 
             # Click second coordinate
             print(f"Clicking second point: {coordinates[1]}")
@@ -29,6 +29,10 @@ def main():
 
             print("Waiting 2 minutes before repeating...")
             time.sleep(120)  # Wait 2 minutes
+
+            pyautogui.click(coordinates[0][0], coordinates[0][1])
+            time.sleep(2)  # Wait 2.25 seconds
+
 
     except KeyboardInterrupt:
         print("\nScript manually terminated.")
