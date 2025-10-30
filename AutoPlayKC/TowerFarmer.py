@@ -33,6 +33,8 @@ def main():
             pyautogui.click(coordinates[0][0], coordinates[0][1])
             time.sleep(2)  # Wait 2.25 seconds
 
+            pyautogui.moveTo(coordinates[1][1], coordinates[0][1])
+
 
     except KeyboardInterrupt:
         print("\nScript manually terminated.")

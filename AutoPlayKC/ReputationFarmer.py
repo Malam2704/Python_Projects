@@ -8,7 +8,7 @@ import keyboard
 coordinates = [
     (1133, 419),   # First point
     (1725, 881),   # Second point
-    (1432, 785)    # Third point
+    (2192, 996)    # Third point
 ]
 
 def main():
