@@ -28,7 +28,7 @@ def main():
             pyautogui.click(coordinates[1][0], coordinates[1][1])
 
             print("Waiting 2 minutes before repeating...")
-            time.sleep(120)  # Wait 2 minutes
+            time.sleep(70)  # Wait 1.16 minutes
 
             pyautogui.click(coordinates[0][0], coordinates[0][1])
             time.sleep(2)  # Wait 2.25 seconds
