@@ -1,23 +1,22 @@
 # Script to farm Paralysis Tower EXP
-
 import pyautogui
 import time
 import keyboard
 
-# Define the coordinates to click (x, y)
+# Define the coordinates to click (x, y) - scaled for 1920x1080 from 2560x1440 (multiply by 0.75)
 coordinates = [
-    (1114, 1057),  # 0 - Click Create
-    (1822,  784),  # 1 - Click Room Scrollbar (then drag down)
-    (1250,  891),  # 2 - Click Paralysis Tower
-    (1149, 1173),  # 3 - Click Confirm
-    (2244, 1051),  # 4 - Click Start
-    (1410,  761),  # 5 - Click Cancel Reshuffle
-    (2191,  961),  # 6 - Click Auto Play
-    (2487,   91),  # 7 - X out of Stage 2
+    (836, 793),  # 0 - Click Create (1114,1057 -> *0.75)
+    (1366, 588),  # 1 - Click Room Scrollbar (then drag down) (1822,784)
+    (938, 668),  # 2 - Click Paralysis Tower (1250,891)
+    (862, 880),  # 3 - Click Confirm (1149,1173)
+    (1683, 788),  # 4 - Click Start (2244,1051)
+    (1058, 571),  # 5 - Click Cancel Reshuffle (1410,761)
+    (1643, 721),  # 6 - Click Auto Play (2191,961)
+    (1865, 68),   # 7 - X out of Stage 2 (2487,91)
 ]
 
-# How far to drag the scrollbar down (in pixels)
-SCROLL_DRAG_Y = 100
+# How far to drag the scrollbar down (in pixels) - scaled from 100 -> 75
+SCROLL_DRAG_Y = 75
 
 # How long to wait for the battle to finish (seconds)
 BATTLE_WAIT_SECONDS = 150  # 2 minutes 30 seconds
