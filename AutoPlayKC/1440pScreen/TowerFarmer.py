@@ -1,3 +1,5 @@
+# Script to farm the Normal Ascension Tower Stage (1080p resolution)
+
 import pyautogui
 import time
 import keyboard

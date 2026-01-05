@@ -1,4 +1,4 @@
-# Script to farm Paralysis Tower EXP
+# Script to farm Paralysis Tower EXP (1080p resolution)
 import pyautogui
 import time
 import keyboard
