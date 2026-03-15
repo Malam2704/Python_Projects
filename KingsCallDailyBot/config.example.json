@@ -1,0 +1,63 @@
+{
+  "daily_time": "18:30",
+  "launch": {
+    "mode": "command",
+    "command": [
+      "open",
+      "-a",
+      "Steam"
+    ],
+    "steam_uri": "steam://rungameid/REPLACE_WITH_APP_ID",
+    "after_launch_seconds": 12
+  },
+  "matching": {
+    "default_confidence": 0.9,
+    "grayscale": true,
+    "retry_interval_seconds": 1.0
+  },
+  "steps": [
+    {
+      "name": "Steam play button",
+      "template": "steam_play.png",
+      "timeout_seconds": 60,
+      "delay_after_seconds": 8,
+      "optional": true
+    },
+    {
+      "name": "In-game play button",
+      "template": "launcher_play.png",
+      "timeout_seconds": 90,
+      "delay_after_seconds": 10
+    },
+    {
+      "name": "Collect daily resources",
+      "template": "daily_loot.png",
+      "timeout_seconds": 45,
+      "delay_after_seconds": 3
+    },
+    {
+      "type": "sleep",
+      "name": "Wait for reward animation",
+      "seconds": 2
+    },
+    {
+      "name": "Open guild screen",
+      "template": "guild.png",
+      "timeout_seconds": 45,
+      "delay_after_seconds": 2
+    },
+    {
+      "name": "Donate button",
+      "template": "donate.png",
+      "timeout_seconds": 45,
+      "delay_after_seconds": 2
+    },
+    {
+      "name": "Donation confirm",
+      "template": "confirm.png",
+      "timeout_seconds": 20,
+      "optional": true,
+      "delay_after_seconds": 2
+    }
+  ]
+}
